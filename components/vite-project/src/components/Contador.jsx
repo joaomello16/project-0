@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Botao from './Botao'
 
 function Contador (){
 
@@ -19,20 +20,10 @@ function Contador (){
                 {numero}
             </p>
             <div className="flex justify-center gap-x-3">
-            <button 
-            onClick={menos}
-            className="bg-red-400 px-4 py-2 text-white hover:bg-red-600 cursor-pointer border border-black rounded" 
-            >
-                menos
-            </button>
-            <button
-             onClick={mais}
-             className="bg-green-500 px-4 py-2 text-white hover:bg-green-600 cursor-pointer border border-black rounded" disabled ={numero >= 15 } 
-             >
-                mais
-            </button>
+            <Botao onClick={menos} cor="red" >menos</Botao>
+            <Botao onClick={mais} cor="green" >mais</Botao>
+            
             </div>
-            {numero >= 15 && <p>Numero chegou a 15 botao mais desabilitado!</p>}
             {numero > 10 ? <p>Passou de 10!</p> : <p>Ainda não chegou em 10!</p>}
             {numero === 0 && <p>Esta zerado!</p>}
 
